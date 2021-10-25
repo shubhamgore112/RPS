@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="script/script.js"></script>
-
+        <link rel="stylesheet" href="styles/style.css">
 
     </head>
     <body >
+        <main class="main">
+
+            <h1>Rock Paper Scissor
+            </h1>
+
+            <div class="scoreboard">
+                <div id="user-label"class="score-info">
+                    User
+                </div>
+                <div id= "computer-label" class="score-info">
+                    Computer
+                </div>
+                <span id="user-score" class="score">0</span>:<span id="computer-score" class="score">0</span>
+            </div>
+
+            <div class="result">
+                Paper covers Rock, You Win.
+            </div>
+                
+            <div class="choice-container">
+                <div id="r" class= "choice">
+                        <img src="/images/icons8-hand-rock-48.png" alt="Rock"/>
+                </div>
+                    
+                <div id="p" class= "choice">
+                    <img src="/images/icons8-hand-48.png" alt="Paper"/>
+                </div>
+                <div id="s" class= "choice">
+                    <img src="/images/icons8-hand-scissors-48.png" alt="Scissor"/>
+                </div>
+            </div>
+        </main>
     
 
     </body>
+    <script src="script/script.js"></script>
 </html>

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap');
+
+.main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* gap: 5vw; */
+    flex-direction: column;
+    border: 2px solid black;
+    background-color:gray;
+    font-family: asap, sans-serif;
+}
+
+.scoreboard{
+    border: 2px solid black;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 10px 10px;
+    height:75px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+    font-size: 75px;
+    border-radius: 5px;
+
+}
+
+.choice-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    margin-top: 2vh;
+}
+
+.choice{
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px 10px;
+}
+    .choice :hover{
+    cursor: pointer;
+    background-color: red;
+}
+
+.main p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#user-label{
+    position: absolute;
+    top:30px;
+    left:-15px;
+    background-color: blueviolet;
+    padding:2px 3px;
+    border-radius: 2px;
+    font-size: 15px;
+}
+#computer-label{
+    position: absolute;
+    top:30px;
+    right:-35px;
+    background-color: blueviolet;
+    padding: 2px 3px;
+    border-radius: 2px;
+    font-size: 15px;
+}
+
+.score{
+}
+
+
+
+
