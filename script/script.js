@@ -3,9 +3,9 @@ let computerScore=0;
 let userScore=0;
 
 const result_div= document.querySelector(".result");
-const rock_id= document.getElementById("r");
-const paper_id= document.getElementById("p");
-const scissor_id= document.getElementById("s");
+const rock_id= document.getElementById("rock");
+const paper_id= document.getElementById("paper");
+const scissor_id= document.getElementById("scissor");
 const userScore_span=document.getElementById("user-score");
 const computerScore_span=document.getElementById("computer-score");
 
@@ -29,13 +29,17 @@ function main(){
 }
 
 function win(user,computer){
-    userScore++ ;
-
+    const userChoice_div = document.getElementById(user);
     const smallUserWord = "user".fontsize(1).sup();
     const smallCompWord = "comp".fontsize(1).sup();
+    userScore++ ;
+
     userScore_span.innerHTML=userScore;
     computerScore_span.innerHTML=computerScore;
     result_div.innerHTML=`${user.charAt(0).toUpperCase()+user.slice(1)}${smallUserWord.sub()} beats ${computer.charAt(0).toUpperCase()+computer.slice(1)}${smallCompWord.sub()}, You Win! `;
+    userChoice_div.classList.add('green-glow');
+    setTimeout(() => userChoice_div.classList.remove('green-glow'), 400);
+    
     if (userScore==5){
         stop("WON");
 
@@ -44,13 +48,17 @@ function win(user,computer){
 }
 
 function lose(user,computer){
-    computerScore++ ;
-
     const smallUserWord = "user".fontsize(1).sup();
     const smallCompWord = "comp".fontsize(1).sup();
+    const userChoice_div = document.getElementById(user);
+    computerScore++ ;
+
     computerScore_span.innerHTML=computerScore;
     userScore_span.innerHTML=userScore;
     result_div.innerHTML=`${computer.charAt(0).toUpperCase()+computer.slice(1)}${smallCompWord.sub()} beats ${user.charAt(0).toUpperCase()+user.slice(1)}${smallUserWord.sub()}, You lose. `;
+    userChoice_div.classList.add('red-glow');
+    setTimeout(() => userChoice_div.classList.remove('red-glow'), 400);
+    
     if (computerScore==5){
         stop("LOSE");
     }
@@ -60,9 +68,14 @@ function lose(user,computer){
 function draw(user,computer){ 
     const smallUserWord = "user".fontsize(1).sup();
     const smallCompWord = "comp".fontsize(1).sup();
+    const userChoice_div = document.getElementById(user);
+
     computerScore_span.innerHTML=computerScore;
     userScore_span.innerHTML=userScore;
     result_div.innerHTML=`${computer.charAt(0).toUpperCase()+computer.slice(1)}${smallCompWord.sub()} and ${user.charAt(0).toUpperCase()+user.slice(1)}${smallUserWord.sub()}, It's DRAW. `;
+    userChoice_div.classList.add('gray-glow');
+    setTimeout(() => userChoice_div.classList.remove('gray-glow'), 400);
+
 }
 
 function stop(winner){
